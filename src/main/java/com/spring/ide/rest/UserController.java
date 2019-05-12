@@ -21,11 +21,6 @@ public class UserController {
     @Autowired
     private UserValidator userValidator;
 
-    @GetMapping("/registration")
-    public String registration(Model model) {
-        return "registration";
-    }
-
     @PostMapping("/registration")
     public String registration(User user, BindingResult bindingResult) {
         userValidator.validate(user, bindingResult);
